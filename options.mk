@@ -6,7 +6,7 @@ MPICC := mpicc
 CFLAGS = -O3 -march=native -flto
 
 # Set `WITH_MPI := T` to enable MPI.
-WITH_MPI := 
+WITH_MPI :=
 
 # Set `WITH_OMP := T` to enable OpenMP.
 # The compiler flag for OpenMP can be set via `OMP_FLAG`.
@@ -26,14 +26,14 @@ WITH_MU_ONE :=
 # Set `WITH_CFITSIO := T` to enable FITS file format.
 # The paths for cfitsio header (fitsio.h) and library (libcfitsio.{a,so,dylib})
 # files can be set via `CFITSIO_INC_DIR` and `CFITSIO_LIB_DIR`, respectively.
-WITH_CFITSIO := 
-CFITSIO_INC_DIR := 
-CFITSIO_LIB_DIR := 
+WITH_CFITSIO := T
+CFITSIO_INC_DIR := /usr/local/include
+CFITSIO_LIB_DIR := /usr/local/lib
 
 # Set `WITH_HDF5 := T` to enable HDF5 file format.
 # The paths for libhdf5 header (hdf5.h) and library (libhdf5.{a,so,dylib})
 # files can be set via `HDF5_INC_DIR` and `HDF5_LIB_DIR`, respectively.
-WITH_HDF5 := 
-HDF5_INC_DIR := 
-HDF5_LIB_DIR := 
+WITH_HDF5 := T
+HDF5_INC_DIR := /usr/local/include
+HDF5_LIB_DIR := /usr/local/lib
 
