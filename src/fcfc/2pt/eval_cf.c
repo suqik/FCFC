@@ -12,13 +12,11 @@
 
 #include "eval_cf.h"
 #include "count_func.h"
-#include "read_file.h"
 #include "read_res.h"
 #include "save_res.h"
 #include "legpoly.h"
 #include "build_tree.h"
 #include <stdlib.h>
-#include <math.h>
 
 #ifdef OMP
 #include <omp.h>
@@ -125,7 +123,8 @@ static int eval_pairs(const CONF *conf, CF *cf
         /* Double auto pairs. */
         if (cf->wt[i]) {
           for (size_t k = 0; k < cf->ntot; k++) cf->cnt[i][k].d *= 2;
-          cf->norm[i] = cf->data[cat[0]].wt * (cf->data[cat[0]].wt - 1);
+          cf->norm[i] = cf->data[cat[0]].wt * cf->data[cat[0]].wt
+              - cf->data[cat[0]].w2;
         }
         else {
           for (size_t k = 0; k < cf->ntot; k++) cf->cnt[i][k].i *= 2;
